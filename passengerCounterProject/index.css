@@ -49,5 +49,9 @@ button {
 #reset-btn {
     background: darkgreen;
 }
- 
+
+.section p {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
 
