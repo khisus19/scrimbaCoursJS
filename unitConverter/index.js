@@ -32,13 +32,14 @@ function kilosToPounds(num) {
 }
 
 function execute() {
-    if (inputEl == ""){
-        inputBigEl.textContent = "X";
-    } else {
+    if (inputEl.value >= 0){
         metersToFeet(inputEl.value);
         litersToGallons(inputEl.value);
         kilosToPounds(inputEl.value);
         inputBigEl.textContent = inputEl.value;
+    } else if (NaN(inputBigEl.value)){
+        console.log(inputEl.value);
+        inputBigEl.textContent = "X";
     }
 }
 
