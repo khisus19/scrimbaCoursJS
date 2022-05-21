@@ -1,9 +1,9 @@
-let firstCard = getRandomCard()
-let secondCard = getRandomCard()
-let cards = [firstCard, secondCard];
-let sum = firstCard + secondCard;
+let firstCard;
+let secondCard;
+let cards = [];
+let sum = 0;
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 let message = "";
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
@@ -11,12 +11,24 @@ let cardsEl = document.getElementById("cards-el");
 
 
 function getRandomCard() {
-    let randomCard = Math.floor(Math.random() * 10) + 2;
+    let randomCard = Math.floor(Math.random() * 13) + 1;
+    if (randomCard === 1) {
+        randomCard = 11;
+    } else if (randomCard > 10){
+        randomCard = 10;
+    }
     return randomCard;
 }
 
 function startGame(){
-    runGame();
+    if (isAlive == false || sum === 21){
+        isAlive = true;
+        cards = [];
+        sum = 0;
+        firstCard = newCard();
+        secondCard = newCard();
+        runGame();
+    }
 }
 
 function runGame() {
@@ -40,8 +52,12 @@ function runGame() {
 }
 
 function newCard() {
-    let newCard = getRandomCard();
-    sum += newCard;
-    cards.push(newCard);
-    runGame();
+    if (isAlive && sum < 21){
+        let newCard = getRandomCard();
+        sum += newCard;
+        cards.push(newCard);
+        runGame();
+    } else {
+        messageEl.textContent = `You can't draw more cards`;
+    }
 }
