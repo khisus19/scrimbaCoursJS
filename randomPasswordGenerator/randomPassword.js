@@ -7,7 +7,7 @@ let password2El = document.getElementById("pwd-el2");
 let password3El = document.getElementById("pwd-el3");
 let password4El = document.getElementById("pwd-el4");
 
-for (var i = 32; i <= 127; i++) {
+for (var i = 33; i <= 127; i++) {
     charArray.push(String.fromCharCode(i));
 }
 
@@ -32,3 +32,5 @@ function passwordizator(charLength){
     password3El.textContent = password3;
     password4El.textContent = password4;
 }
+
+console.log(charArray)
