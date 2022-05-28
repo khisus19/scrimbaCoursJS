@@ -1,4 +1,6 @@
 let charArray = [];
+let inputEl = document.getElementById("input-el");
+let charLength = inputEl.value;
 
 let password1El = document.getElementById("pwd-el1");
 let password2El = document.getElementById("pwd-el2");
@@ -14,12 +16,12 @@ function randomChar() {
     return charArray[randomIndex];
 }
 
-function passwordizator(num){
+function passwordizator(charLength){
     let password1 = "";
     let password2 = "";
     let password3 = "";
     let password4 = "";
-    for(let i = 0; i < num; i++){
+    for(let i = 0; i < charLength; i++){
        password1 += randomChar();
        password2 += randomChar();
        password3 += randomChar();
