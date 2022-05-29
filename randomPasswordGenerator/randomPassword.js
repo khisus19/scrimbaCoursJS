@@ -1,12 +1,14 @@
 let charArray = [];
-let inputEl = document.getElementById("input-el");
 
+let inputEl = document.getElementById("input-el");
 let password1El = document.getElementById("pwd-el1");
 let password2El = document.getElementById("pwd-el2");
 let password3El = document.getElementById("pwd-el3");
 let password4El = document.getElementById("pwd-el4");
 let passContainerCollection = document.getElementsByClassName("password-cont");
 let passContainerArray = [...passContainerCollection];
+let tooltip = document.getElementsByClassName("tooltiptext");
+let tooltipArray = [...tooltip];
 
 for (var i = 33; i <= 126; i++) {
     charArray.push(String.fromCharCode(i));
@@ -49,5 +51,16 @@ function copyClipboard(pass) {
     navigator.clipboard.writeText(pass);
   
     // /* Alert the copied text */
-    console.log("Copied the text: " + pass);
+    for (let i = 0; i < tooltipArray.length; i++){
+        tooltipArray[i].innerHTML = "Copied: " + pass;
+    }
+}
+
+function outFunc() {
+    for (let i = 0; i < 4; i++){
+    }
+    tooltip[0].innerHTML = "Copy to clipboard";
+    tooltip[1].innerHTML = "Copy to clipboard";
+    tooltip[2].innerHTML = "Copy to clipboard";
+    tooltip[3].innerHTML = "Copy to clipboard";
 }
