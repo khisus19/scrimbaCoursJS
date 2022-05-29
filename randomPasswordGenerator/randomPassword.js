@@ -1,7 +1,6 @@
 let charArray = [];
 let inputEl = document.getElementById("input-el");
 
-
 let password1El = document.getElementById("pwd-el1");
 let password2El = document.getElementById("pwd-el2");
 let password3El = document.getElementById("pwd-el3");
@@ -18,10 +17,10 @@ function randomChar() {
 
 function passwordizator(){
     let charLength = inputEl.value;
-    let password1 = "";
-    let password2 = "";
-    let password3 = "";
-    let password4 = "";
+    password1 = "";
+    password2 = "";
+    password3 = "";
+    password4 = "";
     for(let i = 0; i < charLength; i++){
        password1 += randomChar();
        password2 += randomChar();
@@ -33,3 +32,19 @@ function passwordizator(){
     password3El.textContent = password3;
     password4El.textContent = password4;
 }
+
+function copyClipboard(pass) {
+    // /* Get the text field */
+    // //var copyText = document.getElementById("pwd-el1");
+  
+    // /* Select the text field */
+    // copyText.select();
+    // copyText.setSelectionRange(0, 99999); /* For mobile devices */
+  
+    //  /* Copy the text inside the text field */
+    navigator.clipboard.writeText(pass);
+  
+    // /* Alert the copied text */
+    console.log("Copied the text: " + pass);
+    
+  } 
