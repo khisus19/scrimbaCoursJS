@@ -1,4 +1,8 @@
 let charArray = [];
+let password1;
+let password2;
+let password3;
+let password4;
 
 let inputEl = document.getElementById("input-el");
 let password1El = document.getElementById("pwd-el1");
@@ -47,20 +51,17 @@ function passwordizator(){
 }
 
 function copyClipboard(pass) {  
-    //  /* Copy the text inside the text field */
+    //  /* Copy the text inside the password container */
     navigator.clipboard.writeText(pass);
   
-    // /* Alert the copied text */
+    // /* Tooltip alert the copied text */
     for (let i = 0; i < tooltipArray.length; i++){
-        tooltipArray[i].innerHTML = "Copied: " + pass;
+        tooltipArray[i].innerHTML = "Copied!";
     }
 }
 
 function outFunc() {
     for (let i = 0; i < 4; i++){
+        tooltip[i].innerHTML = "Copy to clipboard";
     }
-    tooltip[0].innerHTML = "Copy to clipboard";
-    tooltip[1].innerHTML = "Copy to clipboard";
-    tooltip[2].innerHTML = "Copy to clipboard";
-    tooltip[3].innerHTML = "Copy to clipboard";
 }
