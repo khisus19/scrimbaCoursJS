@@ -5,6 +5,7 @@
 }
 html{
     font-size: 62.5%;
+    font-family: 'Karla', sans-serif;
 }
 
 main{
@@ -12,4 +13,10 @@ main{
     max-width: 550px;
     height: 100%;
     display: flex;
+    background-color: rgb(37, 37, 37);
+    color: white;
+}
+h1 {
+    text-align: center;
+    font-size: 4rem;
 }
