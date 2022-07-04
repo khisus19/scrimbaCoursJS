@@ -1,4 +1,4 @@
 # ScrimbaCourseJS
 Projects I made following Scrimba's Javascript Free Course
 
-https://khisus19.github.io/scrimbaCourseJS/
+<a href="https://khisus19.github.io/scrimbaJsCourse/" target="_blank">Visit site</a>
